@@ -1,4 +1,4 @@
-package sample;
+package com.betzalelkenig.notes;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
