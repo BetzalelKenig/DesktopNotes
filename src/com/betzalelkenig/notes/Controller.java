@@ -1,7 +1,10 @@
 package com.betzalelkenig.notes;
 
 import datamodel.Note;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
@@ -18,6 +21,9 @@ public class Controller {
     private ListView<Note> noteListView;
     @FXML
     private TextArea itemDetailsTextArea;
+    @FXML
+    private Label deadlineLabel;
+
     public void initialize(){
         Note item1 = new Note("Java", "JavaFX and other proj",
                 LocalDate.of(2020, Month.MAY,1));
@@ -32,19 +38,31 @@ public class Controller {
         notes.add(item2);
         notes.add(item3);
 
+        noteListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Note>() {
+            @Override
+            public void changed(ObservableValue<? extends Note> observableValue, Note note, Note t1) {
+                if(t1 != null){
+                    Note item = noteListView.getSelectionModel().getSelectedItem();
+                    itemDetailsTextArea.setText(item.getDetails());
+                }
+            }
+        });
         noteListView.getItems().setAll(notes);
         noteListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        noteListView.getSelectionModel().selectFirst();
     }
 
     @FXML
     public void handleClickListView(){
         Note item = noteListView.getSelectionModel().getSelectedItem();
+        itemDetailsTextArea.setText(item.getDetails());
+        deadlineLabel.setText(item.getDeadline().toString());
 //        System.out.println("The seelected item " + item);
-        StringBuilder sb = new StringBuilder(item.getDetails());
-        sb.append("\n\n\n\n");
-        sb.append("Date: ");
-        sb.append(item.getDeadline().toString());
-        itemDetailsTextArea.setText(sb.toString());
+//        StringBuilder sb = new StringBuilder(item.getDetails());
+//        sb.append("\n\n\n\n");
+//        sb.append("Date: ");
+//        sb.append(item.getDeadline().toString());
+//        itemDetailsTextArea.setText(sb.toString());
     }
 
 }
