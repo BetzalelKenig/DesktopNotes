@@ -40,7 +40,11 @@ public class Controller {
     public void handleClickListView(){
         Note item = noteListView.getSelectionModel().getSelectedItem();
 //        System.out.println("The seelected item " + item);
-        itemDetailsTextArea.setText(item.getDetails());
+        StringBuilder sb = new StringBuilder(item.getDetails());
+        sb.append("\n\n\n\n");
+        sb.append("Date: ");
+        sb.append(item.getDeadline().toString());
+        itemDetailsTextArea.setText(sb.toString());
     }
 
 }
