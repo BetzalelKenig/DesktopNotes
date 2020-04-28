@@ -4,6 +4,7 @@ import datamodel.Note;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextArea;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -14,8 +15,9 @@ public class Controller {
 
     private List<Note> notes;
     @FXML
-    private ListView noteListView;
-
+    private ListView<Note> noteListView;
+    @FXML
+    private TextArea itemDetailsTextArea;
     public void initialize(){
         Note item1 = new Note("Java", "JavaFX and other proj",
                 LocalDate.of(2020, Month.MAY,1));
@@ -34,5 +36,11 @@ public class Controller {
         noteListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
+    @FXML
+    public void handleClickListView(){
+        Note item = noteListView.getSelectionModel().getSelectedItem();
+//        System.out.println("The seelected item " + item);
+        itemDetailsTextArea.setText(item.getDetails());
+    }
 
 }
