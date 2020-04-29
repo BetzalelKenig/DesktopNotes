@@ -32,9 +32,9 @@ public class NoteData {
         return notes;
     }
 
-    public void setNotes(List<Note> notes) {
-        this.notes = notes;
-    }
+//    public void setNotes(List<Note> notes) {
+//        this.notes = notes;
+//    }
 
     public void loadNotes() throws IOException{
         notes = FXCollections.observableArrayList();

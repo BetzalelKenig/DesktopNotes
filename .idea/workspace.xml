@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e969d728-d140-4d0c-a94f-d81190e8915d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/datamodel/NoteData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NoteItem.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datamodel/NoteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamodel/NoteData.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +29,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1bAFc64ix9JZrnHLRxEK1rbMoFB" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder (2)/DesktopNotes" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
@@ -85,5 +93,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

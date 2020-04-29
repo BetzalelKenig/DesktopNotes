@@ -1,6 +1,7 @@
 package com.betzalelkenig.notes;
 
 import datamodel.Note;
+import datamodel.NoteData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -26,7 +27,7 @@ public class Controller {
     private Label deadlineLabel;
 
     public void initialize(){
-        Note item1 = new Note("Java", "JavaFX and other proj",
+/*        Note item1 = new Note("Java", "JavaFX and other proj",
                 LocalDate.of(2020, Month.MAY,1));
 
         Note item2 = new Note("Linux", "tutorial and shell in cw",
@@ -39,6 +40,8 @@ public class Controller {
         notes.add(item2);
         notes.add(item3);
 
+        NoteData.getInstance().setNotes(notes);*/
+
         noteListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Note>() {
             @Override
             public void changed(ObservableValue<? extends Note> observableValue, Note note, Note t1) {
@@ -50,7 +53,7 @@ public class Controller {
                 }
             }
         });
-        noteListView.getItems().setAll(notes);
+        noteListView.getItems().setAll(NoteData.getInstance().getNotes());
         noteListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         noteListView.getSelectionModel().selectFirst();
     }
