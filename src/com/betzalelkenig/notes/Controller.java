@@ -11,6 +11,7 @@ import javafx.scene.control.TextArea;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class Controller {
         Note item1 = new Note("Java", "JavaFX and other proj",
                 LocalDate.of(2020, Month.MAY,1));
 
-        Note item2 = new Note("Linux", "toturial and shell in cw",
+        Note item2 = new Note("Linux", "tutorial and shell in cw",
                 LocalDate.of(2020, Month.MAY,20));
         Note item3 = new Note("crypto", "wiki & cw & math",
                 LocalDate.of(2020, Month.APRIL,1));
@@ -44,6 +45,8 @@ public class Controller {
                 if(t1 != null){
                     Note item = noteListView.getSelectionModel().getSelectedItem();
                     itemDetailsTextArea.setText(item.getDetails());
+                    DateTimeFormatter df = DateTimeFormatter.ofPattern("d, MMMM, yyyy");
+                    deadlineLabel.setText(df.format(item.getDeadline()));
                 }
             }
         });
