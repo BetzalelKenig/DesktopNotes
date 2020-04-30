@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e969d728-d140-4d0c-a94f-d81190e8915d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NoteItem.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/DialogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/noteitemdialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NoteItem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NoteItem.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/datamodel/NoteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamodel/NoteData.java" afterDir="false" />
     </list>
@@ -21,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -81,6 +82,14 @@
       <option name="presentableId" value="Default" />
       <updated>1588067067915</updated>
     </task>
+    <task id="LOCAL-00001" summary="Load and save data from to file">
+      <created>1588180185646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588180185647</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,7 +97,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -96,5 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Load and save data from to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Load and save data from to file" />
   </component>
 </project>

@@ -32,9 +32,10 @@ public class NoteData {
         return notes;
     }
 
-//    public void setNotes(List<Note> notes) {
-//        this.notes = notes;
-//    }
+    public void addNoteItem(Note item){
+        notes.add(item);
+    }
+
 
     public void loadNotes() throws IOException{
         notes = FXCollections.observableArrayList();
@@ -79,4 +80,9 @@ public class NoteData {
             if (bw != null) bw.close();
         }
     }
+
+
+
+
+
 }

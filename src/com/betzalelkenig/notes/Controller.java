@@ -5,16 +5,18 @@ import datamodel.NoteData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TextArea;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Controller {
 
@@ -25,27 +27,16 @@ public class Controller {
     private TextArea itemDetailsTextArea;
     @FXML
     private Label deadlineLabel;
+    @FXML
+    private BorderPane mainBorderPane;
 
-    public void initialize(){
-/*        Note item1 = new Note("Java", "JavaFX and other proj",
-                LocalDate.of(2020, Month.MAY,1));
-
-        Note item2 = new Note("Linux", "tutorial and shell in cw",
-                LocalDate.of(2020, Month.MAY,20));
-        Note item3 = new Note("crypto", "wiki & cw & math",
-                LocalDate.of(2020, Month.APRIL,1));
-
-        notes = new ArrayList<Note>();
-        notes.add(item1);
-        notes.add(item2);
-        notes.add(item3);
-
-        NoteData.getInstance().setNotes(notes);*/
-
+    public void initialize() {
         noteListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Note>() {
+
+
             @Override
             public void changed(ObservableValue<? extends Note> observableValue, Note note, Note t1) {
-                if(t1 != null){
+                if (t1 != null) {
                     Note item = noteListView.getSelectionModel().getSelectedItem();
                     itemDetailsTextArea.setText(item.getDetails());
                     DateTimeFormatter df = DateTimeFormatter.ofPattern("d, MMMM, yyyy");
@@ -59,7 +50,36 @@ public class Controller {
     }
 
     @FXML
-    public void handleClickListView(){
+    public void showNewItemDialog() {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainBorderPane.getScene().getWindow());
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("noteitemdialog.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+
+        } catch (IOException e) {
+            System.out.println("Couldn't load the dialog");
+            e.printStackTrace();
+            return;
+        }
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK){
+            DialogController controller = fxmlLoader.getController();
+            controller.processResult();
+            System.out.println("OK Pressed");
+        }
+
+        else System.out.println("Cancel pressed");
+
+
+    }
+
+    @FXML
+    public void handleClickListView() {
         Note item = noteListView.getSelectionModel().getSelectedItem();
         itemDetailsTextArea.setText(item.getDetails());
         deadlineLabel.setText(item.getDeadline().toString());
