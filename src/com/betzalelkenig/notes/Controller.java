@@ -39,7 +39,7 @@ public class Controller {
                 }
             }
         });
-        noteListView.getItems().setAll(NoteData.getInstance().getNotes());
+        noteListView.setItems(NoteData.getInstance().getNotes());
         noteListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         noteListView.getSelectionModel().selectFirst();
     }
@@ -67,12 +67,10 @@ public class Controller {
         if (result.isPresent() && result.get() == ButtonType.OK){
             DialogController controller = fxmlLoader.getController();
             Note newItem = controller.processResult();
-            noteListView.getItems().setAll(NoteData.getInstance().getNotes());
+//            noteListView.getItems().setAll(NoteData.getInstance().getNotes());
             noteListView.getSelectionModel().select(newItem);
-            System.out.println("OK Pressed");
         }
 
-        else System.out.println("Cancel pressed");
 
 
     }

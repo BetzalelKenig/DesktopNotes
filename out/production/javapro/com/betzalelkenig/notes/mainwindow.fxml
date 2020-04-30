@@ -29,7 +29,7 @@
     </left>
     <center>
         <VBox style="-fx-background-color: aqua">
-        <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS"/>
+        <TextArea fx:id="itemDetailsTextArea" VBox.vgrow="ALWAYS" wrapText="true"/>
             <HBox>
                 <Label text="Date: " style="-fx-background-color: aqua">
                     <font>

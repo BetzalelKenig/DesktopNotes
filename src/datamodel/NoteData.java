@@ -1,6 +1,7 @@
 package datamodel;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,13 +12,12 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
-import java.util.List;
 
 public class NoteData {
     private static NoteData instance = new NoteData();
     private static String filename = "NoteItem.txt";
 
-    private List<Note> notes;
+    private ObservableList<Note> notes;
     private DateTimeFormatter formatter;
 
     public static NoteData getInstance(){
@@ -28,7 +28,7 @@ public class NoteData {
         formatter = DateTimeFormatter.ofPattern("dd, MM, yyyy");
     }
 
-    public List<Note> getNotes() {
+    public ObservableList<Note> getNotes() {
         return notes;
     }
 
