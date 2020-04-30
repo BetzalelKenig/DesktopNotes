@@ -81,7 +81,9 @@ public class NoteData {
         }
     }
 
-
+    public void deleteNote(Note item){
+        notes.remove(item);
+    }
 
 
 

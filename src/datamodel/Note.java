@@ -38,8 +38,8 @@ public class Note {
         this.deadline = deadline;
     }
 
-    @Override
-    public String toString() {
-        return shortDescription;
-    }
+//    @Override
+//    public String toString() {
+//        return shortDescription;
+//    }
 }
