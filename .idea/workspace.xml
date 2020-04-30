@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e969d728-d140-4d0c-a94f-d81190e8915d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/DialogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/noteitemdialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NoteItem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NoteItem.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datamodel/NoteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamodel/NoteData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/DialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/DialogController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,7 +36,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder (2)/DesktopNotes" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -89,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588180185647</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="end Show Dialog and Add Controller Code">
+      <created>1588239602861</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588239602861</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +114,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Load and save data from to file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Load and save data from to file" />
+    <MESSAGE value="end Show Dialog and Add Controller Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="end Show Dialog and Add Controller Code" />
   </component>
 </project>

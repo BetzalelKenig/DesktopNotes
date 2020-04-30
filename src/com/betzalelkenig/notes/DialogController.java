@@ -18,13 +18,14 @@ public class DialogController {
     @FXML
     private DatePicker deadlinePicker;
 
-    public void processResult(){
+    public Note processResult() {
         String shortDescription = shortDescriptionField.getText().trim();
         String details = detailsArea.getText().trim();
         LocalDate deadLineValue = deadlinePicker.getValue();
 
-        NoteData.getInstance().addNoteItem(new Note(shortDescription, details, deadLineValue));
-
+        Note newItem = new Note(shortDescription, details, deadLineValue);
+        NoteData.getInstance().addNoteItem(newItem);
+        return newItem;
     }
 
 

@@ -6,15 +6,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,6 +48,8 @@ public class Controller {
     public void showNewItemDialog() {
         Dialog<ButtonType> dialog = new Dialog<>();
         dialog.initOwner(mainBorderPane.getScene().getWindow());
+        dialog.setTitle("Add New Item");
+        dialog.setHeaderText("Use this dialog to create a new Note");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("noteitemdialog.fxml"));
         try {
@@ -69,7 +66,9 @@ public class Controller {
         Optional<ButtonType> result = dialog.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK){
             DialogController controller = fxmlLoader.getController();
-            controller.processResult();
+            Note newItem = controller.processResult();
+            noteListView.getItems().setAll(NoteData.getInstance().getNotes());
+            noteListView.getSelectionModel().select(newItem);
             System.out.println("OK Pressed");
         }
 
