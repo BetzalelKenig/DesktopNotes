@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e969d728-d140-4d0c-a94f-d81190e8915d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/iconf.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoteItem.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NoteItem.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javapro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javapro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javapro/datamodel/Note.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/datamodel/Note.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javapro/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datamodel/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamodel/Note.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datamodel/NoteData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/datamodel/NoteData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/betzalelkenig/notes/mainwindow.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,9 +36,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../New folder (2)/DesktopNotes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/betzalelkenig/notes" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\BK\Desktop\New folder\DesktopNotes\src\com\betzalelkenig\notes" />
+      <recent name="C:\Users\BK\Desktop\New folder\DesktopNotes\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -111,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588245665132</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="end Context Menu">
+      <created>1588264010173</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588264010173</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,6 +149,7 @@
     <MESSAGE value="end Show Dialog and Add Controller Code" />
     <MESSAGE value="end Update List View" />
     <MESSAGE value="end data binding and observation" />
-    <option name="LAST_COMMIT_MESSAGE" value="end data binding and observation" />
+    <MESSAGE value="end Context Menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="end Context Menu" />
   </component>
 </project>

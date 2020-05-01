@@ -9,6 +9,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.util.Callback;
@@ -32,6 +34,8 @@ public class Controller {
     private BorderPane mainBorderPane;
     @FXML
     private ContextMenu listContextMenu;
+    @FXML
+    private Button newBotton;
 
     public void initialize() {
 
@@ -44,6 +48,7 @@ public class Controller {
                 deleteItem(note);
             }
         });
+
 
         listContextMenu.getItems().addAll(deleteMenuItem);
         noteListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Note>() {
@@ -87,7 +92,7 @@ public class Controller {
                         (obs, wasEmpty, isNowEmpty) -> {
                             if (isNowEmpty) {
                                 cell.setContextMenu(null);
-                            }else {
+                            } else {
                                 cell.setContextMenu(listContextMenu);
                             }
                         });
@@ -125,6 +130,16 @@ public class Controller {
         }
 
 
+    }
+
+    @FXML
+    public void handleKeyPressed(KeyEvent keyEvent) {
+        Note selectedItem = noteListView.getSelectionModel().getSelectedItem();
+        if (selectedItem != null){
+            if (keyEvent.getCode().equals(KeyCode.DELETE)){
+                deleteItem(selectedItem);
+            }
+        }
     }
 
     @FXML
