@@ -2,8 +2,10 @@ package com.betzalelkenig.notes;
 
 import datamodel.Note;
 import datamodel.NoteData;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -22,6 +24,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class Controller {
 
@@ -39,7 +42,12 @@ public class Controller {
     @FXML
     private Button newButton;
     @FXML
-    private  ToggleButton filterToggleButton;
+    private ToggleButton filterToggleButton;
+
+    private FilteredList<Note> filteredList;
+
+    private Predicate<Note> wantAllItems;
+    private Predicate<Note> wantTodaysItems;
 
     public void initialize() {
 
@@ -69,7 +77,21 @@ public class Controller {
             }
         });
 
-        SortedList<Note> sortedList = new SortedList<Note>(NoteData.getInstance().getNotes(),
+        wantAllItems = new Predicate<Note>() {
+            @Override
+            public boolean test(Note note) {
+                return true;
+            }
+        };
+        wantTodaysItems = new Predicate<Note>() {
+            @Override
+            public boolean test(Note note) {
+                return (note.getDeadline().equals(LocalDate.now()));
+            }
+        };
+        filteredList = new FilteredList<Note>(NoteData.getInstance().getNotes(), wantAllItems);
+
+        SortedList<Note> sortedList = new SortedList<Note>(filteredList,
                 new Comparator<Note>() {
                     @Override
                     public int compare(Note o1, Note o2) {
@@ -149,8 +171,8 @@ public class Controller {
     @FXML
     public void handleKeyPressed(KeyEvent keyEvent) {
         Note selectedItem = noteListView.getSelectionModel().getSelectedItem();
-        if (selectedItem != null){
-            if (keyEvent.getCode().equals(KeyCode.DELETE)){
+        if (selectedItem != null) {
+            if (keyEvent.getCode().equals(KeyCode.DELETE)) {
                 deleteItem(selectedItem);
             }
         }
@@ -181,11 +203,27 @@ public class Controller {
         }
     }
 
-    public void handleFilterButton(){
-        if (filterToggleButton.isSelected()){
-
-        }else {
-
+    @FXML
+    public void handleFilterButton() {
+        Note selectedItem = noteListView.getSelectionModel().getSelectedItem();
+        if (filterToggleButton.isSelected()) {
+            filteredList.setPredicate(wantTodaysItems);
+            if (filteredList.isEmpty()) {
+                itemDetailsTextArea.clear();
+                deadlineLabel.setText("");
+            } else if (filteredList.contains(selectedItem)) {
+                noteListView.getSelectionModel().select(selectedItem);
+            } else {
+                noteListView.getSelectionModel().selectFirst();
+            }
+        } else {
+            filteredList.setPredicate(wantAllItems);
+            noteListView.getSelectionModel().select(selectedItem);
         }
+    }
+
+    @FXML
+    public void handleExit(){
+        Platform.exit();
     }
 }
