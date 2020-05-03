@@ -4,6 +4,7 @@ import datamodel.Note;
 import datamodel.NoteData;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,6 +19,7 @@ import javafx.util.Callback;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,7 +37,9 @@ public class Controller {
     @FXML
     private ContextMenu listContextMenu;
     @FXML
-    private Button newBotton;
+    private Button newButton;
+    @FXML
+    private  ToggleButton filterToggleButton;
 
     public void initialize() {
 
@@ -64,10 +68,20 @@ public class Controller {
                 }
             }
         });
-        noteListView.setItems(NoteData.getInstance().getNotes());
+
+        SortedList<Note> sortedList = new SortedList<Note>(NoteData.getInstance().getNotes(),
+                new Comparator<Note>() {
+                    @Override
+                    public int compare(Note o1, Note o2) {
+                        return o1.getDeadline().compareTo(o2.getDeadline());
+                    }
+                });
+
+//        noteListView.setItems(NoteData.getInstance().getNotes());
+        noteListView.setItems(sortedList);
         noteListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         noteListView.getSelectionModel().selectFirst();
-        //red if the date pass
+        //colors according to the date
         noteListView.setCellFactory(new Callback<ListView<Note>, ListCell<Note>>() {
             @Override
             public ListCell<Note> call(ListView<Note> noteListView) {
@@ -164,6 +178,14 @@ public class Controller {
 
         if (result.isPresent() && (result.get() == ButtonType.OK)) {
             NoteData.getInstance().deleteNote(item);
+        }
+    }
+
+    public void handleFilterButton(){
+        if (filterToggleButton.isSelected()){
+
+        }else {
+
         }
     }
 }

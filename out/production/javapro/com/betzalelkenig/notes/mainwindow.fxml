@@ -14,6 +14,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
 <BorderPane fx:id="mainBorderPane" fx:controller="com.betzalelkenig.notes.Controller"
             xmlns:fx="http://javafx.com/fxml">
     <top>
@@ -34,11 +35,17 @@
                             <Tooltip text="Add a New Note"/>
                         </tooltip>
                         <graphic>
-                            <ImageView>
-                                <Image url="@iconf.png"/>
+                            <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                <Image url="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-9/16/new-file-icon.png" />
                             </ImageView>
                         </graphic>
                     </Button>
+                    <ToggleButton text="Today's Items">
+                        <tooltip>
+<!--                            need to be changing by the state of the button-->
+                            <Tooltip text="Button Down: Show Today's items only. Button Up Show all items"/>
+                        </tooltip>
+                    </ToggleButton>
                 </HBox>
             </ToolBar>
         </VBox>
